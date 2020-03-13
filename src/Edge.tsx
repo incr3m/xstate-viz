@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import * as XState from 'xstate';
-import { serializeEdge, isHidden, relative, center, Point } from './utils';
+// import * as XState from 'xstate';
+import { serializeEdge, isHidden, relative, center, Point, Edge as EdgeType } from './utils';
 import { tracker, TrackerData } from './tracker';
 
 interface EdgeProps {
-  edge: XState.Edge<any, any>;
+  edge: EdgeType<any, any>;
   preview: boolean;
   svg: SVGSVGElement;
 }
