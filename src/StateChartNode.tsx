@@ -15,7 +15,7 @@ import {
 } from './utils';
 import { EventName } from './EventName';
 import { tracker } from './tracker';
-import { getEdges } from 'xstate/lib/graph';
+import { getEdges } from './utils';
 import { StyledButton } from './Button';
 import { actionTypes } from 'xstate/lib/actions';
 import { StateChartAction } from './StateChartAction';

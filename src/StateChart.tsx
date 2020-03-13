@@ -18,8 +18,8 @@ import { StateChartContainer, StyledStateChartContainer } from './VizTabs';
 import { StatePanel } from './StatePanel';
 import { EventPanel } from './EventPanel';
 import { CodePanel } from './CodePanel';
+import { getEdges } from './utils';
 import { raise } from 'xstate/lib/actions';
-import { getEdges } from 'xstate/lib/graph';
 import { notificationsActor } from './Header';
 import { useMachine, useService } from '@xstate/react';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { getEdges } from 'xstate/lib/graph';
+import { getEdges, getAllEdges } from './utils';
 import { serializeEdge, initialStateNodes } from './utils';
 import { Edge } from './Edge';
 import { InitialEdge } from './InitialEdge';
@@ -34,12 +34,17 @@ export const StateChartVisualization: React.SFC<{
   let edges: ReturnType<typeof getEdges> | null;
 
   try {
-    edges = getEdges(service.machine);
+    edges = [];
+    for (const stateKey in service.machine.states) {
+      edges.push(...getAllEdges(service.machine.states[stateKey]));
+    }
   } catch (err) {
     edges = null;
     console.error(err);
   }
-
+  
+  console.log('edges xx', edges);
+  
   useEffect(() => {
     setTransitionCount(transitionCount + 1);
   }, [current]);

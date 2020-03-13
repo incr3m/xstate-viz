@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { Editor } from './Editor';
 import { toMachine } from './StateChart';
-import { getEdges } from 'xstate/lib/graph';
 import { notificationsActor } from './Header';
 
 interface CodePanelProps {

@@ -36,6 +36,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@xstate/graph": "^1.0.0",
     "@xstate/react": "^0.6.1",
     "brace": "^0.11.1",
     "create-react-app": "^2.1.8",
@@ -43,6 +44,7 @@
     "immer": "^3.3.0",
     "query-string": "^6.11.0",
     "react-ace": "^6.6.0",
+    "react-scripts": "^3.4.0",
     "react-syntax-highlighter": "^10.3.5",
     "styled-components": "^4.4.1",
     "xstate": "^4.7.8"
