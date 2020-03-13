@@ -25,6 +25,8 @@ export interface Edge<
   TEventType extends TEvent['type'] = string
 > {
   event: TEventType;
+  cond?: any;
+  actions?: any;
   source: StateNode<TContext, any, TEvent>;
   target: StateNode<TContext, any, TEvent>;
   transition: TransitionDefinition<TContext, TEvent>;
@@ -183,7 +185,6 @@ export function getEdges(stateNode: StateNode): Array<Edge<any, any, any>> {
     transitions.forEach(t => {
       (t.target || [stateNode]).forEach(target => {
         edges.push({
-
           event: eventType,
           source: stateNode,
           target,
@@ -201,10 +202,13 @@ export function getEdges(stateNode: StateNode): Array<Edge<any, any, any>> {
 export function getAllEdges(stateNode: StateNode): Array<Edge<any, any, any>> {
   const children = getChildren(stateNode);
 
-  return flatten([
-    ...getEdges(stateNode),
-    ...children.map(child => getAllEdges(child))
-  ]);
+  const arrs = [];
+  arrs.push(...getEdges(stateNode))
+  children.forEach(child => {
+    arrs.push(...getAllEdges(child));
+  });
+  return arrs;
+
 }
 
 export interface Indexes {

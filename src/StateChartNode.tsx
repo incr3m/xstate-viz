@@ -553,7 +553,7 @@ export const StateChartNode: React.FC<StateChartNodeProps> = props => {
         {!!stateActions(stateNode).length && (
           <>
             <StyledStateNodeActions>
-              {stateNode.definition.onEntry.map(action => {
+              {stateNode.definition.entry.map(action => {
                 const actionString = action.type;
 
                 return (
@@ -566,7 +566,7 @@ export const StateChartNode: React.FC<StateChartNodeProps> = props => {
               })}
             </StyledStateNodeActions>
             <StyledStateNodeActions>
-              {stateNode.definition.onExit.map(action => {
+              {stateNode.definition.exit.map(action => {
                 const actionString = action.type;
                 return (
                   <StateChartAction
@@ -634,7 +634,7 @@ export const StateChartNode: React.FC<StateChartNodeProps> = props => {
         ) : null}
       </StyledStateNodeState>
       <StyledStateNodeEvents>
-        {getEdges(stateNode, { depth: 0 }).map(edge => {
+        {getEdges(stateNode).map(edge => {
           const { event: ownEvent } = edge;
           const isBuiltInEvent = ownEvent.indexOf('xstate.') === 0;
           const guard = edge.transition.cond;
@@ -657,7 +657,7 @@ export const StateChartNode: React.FC<StateChartNodeProps> = props => {
             delay =
               typeof delayExpr === 'number'
                 ? delayExpr
-                : delayExpr(current.context, current.event);
+                : delayExpr(current.context, current.event, {_event:current.event});
           }
 
           const isTransient = ownEvent === '';

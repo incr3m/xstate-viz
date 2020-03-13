@@ -370,7 +370,7 @@ export class Edge extends Component<EdgeProps, EdgeState> {
           markerEnd={isHighlighted ? `url(#marker-preview)` : `url(#marker)`}
           ref={this.ref}
         />
-        {process.env.NODE_ENV === 'development'
+        {/* {process.env.NODE_ENV === 'development'
           ? circles.map((circle, i) => {
               const fill = i > pts.length ? 'red' : 'blue';
               return (
@@ -385,7 +385,7 @@ export class Edge extends Component<EdgeProps, EdgeState> {
                 </circle>
               );
             })
-          : null}
+          : null} */}
       </g>
     );
   }
