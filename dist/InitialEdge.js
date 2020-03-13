@@ -1,4 +1,4 @@
-import { InitialEdge } from '@bit/initial-edge';
+import { InitialEdge } from '@bit/incrm.xstate.initial-edge';
 
 export { InitialEdge };
 

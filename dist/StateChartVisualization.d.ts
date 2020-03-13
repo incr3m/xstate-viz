@@ -1,4 +1,4 @@
-import { StateChartVisualization } from '@bit/state-chart-visualization';
+import { StateChartVisualization } from '@bit/incrm.xstate.state-chart-visualization';
 
 export { StateChartVisualization };
 

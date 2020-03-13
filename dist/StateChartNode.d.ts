@@ -1,4 +1,4 @@
-import { StateChartNode } from '@bit/state-chart-node';
+import { StateChartNode } from '@bit/incrm.xstate.state-chart-node';
 
 export { StateChartNode };
 
