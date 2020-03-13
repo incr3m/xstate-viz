@@ -1,4 +1,4 @@
-import { StateChartAction } from '@bit/state-chart-action';
+import { StateChartAction } from '@bit/incrm.xstate.state-chart-action';
 
 export { StateChartAction };
 

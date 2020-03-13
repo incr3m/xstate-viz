@@ -1,4 +1,4 @@
-import { StyledButton } from '@bit/button';
+import { StyledButton } from '@bit/incrm.xstate.button';
 
 export { StyledButton };
 

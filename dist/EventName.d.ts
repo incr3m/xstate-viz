@@ -1,4 +1,4 @@
-import { EventName } from '@bit/event-name';
+import { EventName } from '@bit/incrm.xstate.event-name';
 
 export { EventName };
 

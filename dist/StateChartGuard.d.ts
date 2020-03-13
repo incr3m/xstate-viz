@@ -1,4 +1,4 @@
-import { StateChartGuard } from '@bit/state-chart-guard';
+import { StateChartGuard } from '@bit/incrm.xstate.state-chart-guard';
 
 export { StateChartGuard };
 

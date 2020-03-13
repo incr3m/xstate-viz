@@ -1,4 +1,4 @@
-import { Loader } from '@bit/loader';
+import { Loader } from '@bit/incrm.xstate.loader';
 
 export { Loader };
 

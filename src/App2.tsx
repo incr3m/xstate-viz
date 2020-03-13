@@ -6,8 +6,7 @@ import { StateChartVisualization } from "./StateChartVisualization";
 // import { StateChartContainer } from './VizTabs';
 import styled from 'styled-components';
 
-
-const machineDef = {
+const machineDefx = {
   id: "fetch",
   initial: "idle",
   context: {
@@ -46,13 +45,53 @@ const machineDef = {
   }
 };
 
+const machineDef = {
+  id: "fetch",
+  initial: "idle",
+  context: {
+    retries: 0
+  },
+  states: {
+    idle: {
+      on: {
+        LOAD: "loading",
+        FETCH: "fetching",
+        EDIT: "success"
+      },
+      ...machineDefx
+    },
+    fetching: {
+      on: {
+        LOAD: "loading"
+      }
+    },
+    loading: {
+      on: {
+        RESOLVE: "success",
+        REJECT: "failure",
+        BACK: "idle"
+      }
+    },
+    success: {
+      type: "final"
+    },
+    failure: {
+      on: {
+        RETRY: {
+          target: "loading"
+        }
+      }
+    }
+  }
+};
+
 export function App() {
   const service = React.useMemo(() => {
     return interpret(Machine(machineDef)).start();
   }, []);
 
   return (
-    <div style={{border:'solid 3px black', margin:50}}>
+    <div>
       <StateChartVisualization
         service={service}
         visible={true}

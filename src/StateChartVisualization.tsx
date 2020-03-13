@@ -143,7 +143,7 @@ export const StateChartVisualization: React.SFC<{
     console.error(err);
   }
   
-  console.log('edges xx', edges);
+  // console.log('edges xx',  JSON.stringify(state||{},null,2));
   
   useEffect(() => {
     setTransitionCount(transitionCount + 1);
@@ -355,6 +355,11 @@ const StyledApp = styled.main`
   grid-template-rows: 3rem auto;
   grid-template-columns: auto var(--sidebar-width);
   overflow: hidden;
+
+  & *, & *:before, & *:after {
+    box-sizing: border-box;
+    position: relative;
+  }
 
   > ${StyledLayoutButton} {
     display: inline-block;

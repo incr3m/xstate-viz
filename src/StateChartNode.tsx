@@ -425,7 +425,7 @@ const StyledStateNodeAction = styled.div`
 `;
 
 const StyledActiveAnim = styled.div`
-  position: absolute;
+  position: absolute !important;
   z-index: 0;
   height: 100%;
   width: 100%;
