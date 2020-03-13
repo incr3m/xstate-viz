@@ -109,7 +109,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "incrm.xstate/state-chart-visualization@0.0.3": {
+    "incrm.xstate/state-chart-visualization@0.0.4": {
         "files": [
             {
                 "relativePath": "src/StateChartVisualization.tsx",
@@ -145,7 +145,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "incrm.xstate/viz-tabs@0.0.3": {
+    "incrm.xstate/viz-tabs@0.0.4": {
         "files": [
             {
                 "relativePath": "src/VizTabs.tsx",
